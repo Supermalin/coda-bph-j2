@@ -2,12 +2,25 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Exercice Require</title>
+        <title>Exercices Formulaires</title>
         <link rel="stylesheet" href="assets/styles/style.css">
     </head>
     <body>
-        <?php require "templates/partials/_header.phtml"?>
-        <?php require "templates/partials/_main.phtml"?>
-        <?php require "templates/partials/_footer.phtml"?>
+        <?php require "templates/partials/_header.phtml"; ?>
+
+        <?php $template=routing();
+
+        if ($template==="about"){
+            require "templates/partials/_about.phtml";
+        } else if ($template==="contact"){
+            require "templates/partials/_contact.phtml";
+        } else{
+            require "templates/partials/_homepage.phtml";
+        }
+
+        require "templates/partials/_footer.phtml";
+
+        ?>
+
     </body>
 </html>
